@@ -340,6 +340,92 @@ h1 {
     .pokemon__img--151 {
       background-position: -720px -2160px; }
 
+.types {
+  display: inline-block;
+  width: 54px;
+  line-height: 1;
+  margin: 1px 0;
+  border: 1px solid #aaa;
+  padding: 3px 0;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #333;
+  text-transform: uppercase; }
+  .types--poison {
+    background: #a040a0;
+    background-image: -webkit-linear-gradient(#a040a0, #803380);
+    background-image: linear-gradient(#a040a0, #803380);
+    border-color: #662966; }
+  .types--grass {
+    background: #78c850;
+    background-image: -webkit-linear-gradient(#78c850, #5ca935);
+    background-image: linear-gradient(#78c850, #5ca935);
+    border-color: #4a892b; }
+  .types--fire {
+    background: #f08030;
+    background-image: -webkit-linear-gradient(#f08030, #dd6610);
+    background-image: linear-gradient(#f08030, #dd6610);
+    border-color: #b4530d; }
+  .types--flying {
+    background: #a890f0;
+    background-image: -webkit-linear-gradient(#a890f0, #9180c4);
+    background-image: linear-gradient(#a890f0, #9180c4);
+    border-color: #7762b6; }
+  .types--water {
+    background: #5d81d6;
+    color: #fff; }
+  .types--bug {
+    background: #909e1b;
+    color: #fff; }
+  .types--normal {
+    background: #7a7a57;
+    color: #fff; }
+  .types--electric {
+    background: #c4a526;
+    color: #fff; }
+  .types--ground {
+    background: #ad9551;
+    color: #fff; }
+  .types--fairy {
+    background: #d044d0;
+    color: #fff; }
+  .types--fighting {
+    background: #c03028;
+    color: #fff; }
+  .types--psychic {
+    background: #de4f7a;
+    color: #fff; }
+  .types--rock {
+    background: #857329;
+    color: #fff; }
+  .types--steel {
+    background: #9797ab;
+    color: #fff; }
+  .types--ice {
+    background: #87bfbf;
+    color: #fff; }
+  .types--ghost {
+    background: #5e4a80;
+    color: #fff; }
+  .types--dragon {
+    background: #7038f8;
+    color: #fff; }
+
+.moves {
+  margin: 0 5px; }
+
+.abilities {
+  margin: 0 5px; }
+
+.stats__item {
+  padding: 10px;
+  border: 1px solid; }
+.stats__status {
+  height: 100%;
+  background: red; }
+
 .modal {
   position: fixed;
   top: 0;
