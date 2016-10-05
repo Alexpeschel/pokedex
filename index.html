@@ -3,23 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="js/app.js"></script>
   </head>
   <body>
-    <h1>Pokémon</h1>
-    <div class="pokemons" id="pokemons">
+    <header class="header">
+      <h1>Pokémon</h1>
+      <form class="form" id="form">
+        <input class="search__input" id="search" type="search" name="search" value="" placeholder="Search..">
+        <!-- <button class="search__button" type="submit" name="submit">Search</button> -->
+      </form>
+    </header>
 
+    <div class="pokemons" id="pokemons">
+      <div class="loading" id="loader">
+        <span class="pokeposition">
+          <i class="ball"></i>
+        </span>
+        <p>loading...</p>
+      </div>
     </div>
 
     <div class="modal" id="modal">
       <div class="modal__content" id="modalContent">
-
+        <div class="loading" id="modalLoader">
+          <span class="pokeposition">
+            <i class="ball"></i>
+          </span>
+          <p>loading...</p>
+        </div>
       </div>
-      <div class="modal__bg" id="modalBg">
-        <a class="modal__close" href="#" id="modalClose">Close</a>
-      </div>
+      <a class="modal__close" href="#" id="modalClose">Close</a>
+      <div class="modal__bg" id="modalBg"></div>
     </div>
   </body>
 </html>
