@@ -111,13 +111,13 @@ $(document).ready(function() {
 
     // Stats
     pokis += '<p><h3>Stats: </h3>';
-    for(var i = 0; i<data.stats.length; i++) {
+    for(var j = 0; j<data.stats.length; j++) {
       pokis += '<div class="stats__item">';
-      pokis += '<a href="' + data.stats[i].stat.url + '" class="">';
-      pokis += data.stats[i].stat.name;
+      pokis += '<a href="' + data.stats[j].stat.url + '" class="">';
+      pokis += data.stats[j].stat.name;
       pokis += '</a>';
-      pokis += '<span>' + data.stats[i].base_stat + '</span>'
-      pokis += '<div class="stats__status" style="width:' + (data.stats[i].base_stat / 1.8) + '%">';
+      pokis += '<span>' + data.stats[j].base_stat + '</span>';
+      pokis += '<div class="stats__status" style="width:' + (data.stats[j].base_stat / 1.8) + '%">';
       pokis += '</div>';
       pokis += '</div>';
     }
@@ -206,13 +206,13 @@ $(document).ready(function() {
 
       // Stats
       pokis += '<p><h3>Stats: </h3>';
-      for(var i = 0; i<data.stats.length; i++) {
+      for(var k = 0; k<data.stats.length; k++) {
         pokis += '<div class="stats__item">';
-        pokis += '<a href="' + data.stats[i].stat.url + '" class="">';
-        pokis += data.stats[i].stat.name;
+        pokis += '<a href="' + data.stats[k].stat.url + '" class="">';
+        pokis += data.stats[k].stat.name;
         pokis += '</a>';
-        pokis += '<span>' + data.stats[i].base_stat + '</span>'
-        pokis += '<div class="stats__status" style="width:' + (data.stats[i].base_stat / 1.8) + '%">';
+        pokis += '<span>' + data.stats[k].base_stat + '</span>';
+        pokis += '<div class="stats__status" style="width:' + (data.stats[k].base_stat / 1.8) + '%">';
         pokis += '</div>';
         pokis += '</div>';
       }
