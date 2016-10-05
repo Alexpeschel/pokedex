@@ -155,26 +155,25 @@ $(document).ready(function() {
       // id
       // Name
       pokis += '<h2><span>#' + data.id + '</span> ' + data.name + '</h2>';
-      // // flavor text entries
-      // pokis += '<p>';
-      // pokis += flavorTextEntry;
-      // console.log(flavorTextEntry);
-      // pokis += '</p>';
+
       // weight
       pokis += '<p>';
       pokis += '<strong>Weight: </strong>';
       pokis += data.weight;
       pokis += '</p>';
+
       // height
       pokis += '<p>';
       pokis += '<strong>Height: </strong>';
       pokis += data.height;
       pokis += '</p>';
+
       // Base XP
       pokis += '<p>';
       pokis += '<strong>Base XP: </strong>';
       pokis += data.base_experience;
       pokis += '</p>';
+
       // Types
       pokis += '<p>';
       pokis += '<strong>Types: </strong>';
@@ -198,33 +197,12 @@ $(document).ready(function() {
         pokis += data.moves[i].move.name;
         pokis += '</a>';
       }
-
       pokis += '</p>';
 
-      // // Habitat
-      // pokis += '<p><strong>';
-      // pokis += 'Habitat: ';
-      // pokis += '</strong>';
-      // pokis += '<a href="' + habitatUrl + '" class="">';
-      // pokis += habitatName + '</a></p>';
-
-      // // Color
-      // pokis += '<p><strong>Color: </strong>';
-      // pokis += '<a href="' + colorUrl + '" class="">';
-      // pokis += colorName + '</a></p>';
-
-      // // Shape
-      // pokis += '<p><strong>Shape: </strong>';
-      // pokis += '<a href="' + shapeUrl + '" class="">';
-      // pokis += shapeName + '</a></p>';
-
-      // Abilities
-      // if(data.abilities[0].is_hidden === true){abilitieStatus1 = 'hidden';}
-      // if(data.abilities[1].is_hidden === true){abilitieStatus2 = 'hidden';}
-      pokis += '<p><strong>Abilities: </strong>';
-      pokis += '<a class="abilities ' +  + '" href="' + data.abilities[0].ability.url + '">' + data.abilities[0].ability.name + '</a>';
-      pokis += '<a class="abilities ' +  + '" href="' + data.abilities[1].ability.url + '">' + data.abilities[1].ability.name + '</a>';
-      pokis += '</p>';
+      // pokis += '<p><strong>Abilities: </strong>';
+      // pokis += '<a class="abilities ' +  + '" href="' + data.abilities[0].ability.url + '">' + data.abilities[0].ability.name + '</a>';
+      // pokis += '<a class="abilities ' +  + '" href="' + data.abilities[1].ability.url + '">' + data.abilities[1].ability.name + '</a>';
+      // pokis += '</p>';
 
       // Stats
       pokis += '<p><h3>Stats: </h3>';
@@ -239,22 +217,6 @@ $(document).ready(function() {
         pokis += '</div>';
       }
       pokis += '</p>';
-
-      // Base Happiness
-      // pokis += '<p><strong>Base Happiness: </strong>';
-      // pokis += data.base_happiness + '</p>';
-      // Growth Rate
-      // pokis += '<p><strong>Growth Rate: </strong>';
-      // pokis += '<a href="' + data.growth_rate.url + '" class="">';
-      // pokis += data.growth_rate.name + '</a></p>';
-      // Evolves From Species !! IF NULL !!
-      // pokis += '<p><strong>Evolves From Species: </strong>';
-      // if(data.evolves_from_species !== null) {
-      //   pokis += '<a href="' + data.evolves_from_species.url + '" class="">';
-      //   pokis += data.evolves_from_species.name + '</a></p>';
-      // } else {
-      //   pokis += 'None</p>';
-      // }
 
       $('#modalContent').html(pokis);
     }
