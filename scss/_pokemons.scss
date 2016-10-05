@@ -1,0 +1,47 @@
+.pokemons {
+  padding: 10px;
+}
+
+.pokemon {
+  display: inline-block;
+  width: 120px;
+  padding: 10px;
+  margin: 10px;
+  background: #fff;
+  &__heading {
+    display: block;
+    color: #000;
+    text-align: center;
+    &__id {
+      color: #929292;
+    }
+    &__name {
+      text-transform: capitalize;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    max-width: none;
+    background: transparent none no-repeat 120px 120px;
+    vertical-align: middle;
+    background-image: url(../img/pokemons.jpg);
+
+    // create the Pokemon unique classes
+    $x: 0;
+    $y: 0;
+
+    @for $i from 1 through 151 {
+      &--#{$i} {
+        background-position: $x $y;
+      }
+      $x: $x - 120px;
+      @if $x == -960px {
+        $x: 0;
+        $y: $y - 120px;
+      }
+    }
+  }
+}

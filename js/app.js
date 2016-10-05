@@ -3,6 +3,7 @@ $(document).ready(function() {
   var pokemonAPI = "http://pokeapi.co/api/v2/pokedex/2/";
   var pokemonOptions = {};
   function displayPokemons(data) {
+    console.log( "success" );
     var pokis = '<ol>';
       $.each(data.pokemon_entries,function(i,pokemon) {
         pokis += '<li class="pokemon">';
@@ -15,7 +16,22 @@ $(document).ready(function() {
       pokis += '</ol>';
       $('#pokemons').html(pokis);
   }
-  $.getJSON(pokemonAPI, pokemonOptions, displayPokemons);
+  $.getJSON(pokemonAPI, pokemonOptions, displayPokemons)
+   .done(function() {
+     console.log( "second success" );
+   })
+   .fail(function() {
+     console.log( "error" );
+     $('#pokemons').html('<p class="error">There was an Error! Try again later.</p>');
+   })
+   .always(function() {
+     console.log( "complete" );
+   })
+   .complete(function() {
+      console.log("second complete");
+      $('#loader').hide();
+   });
+
 
   // get images from flickr
 
@@ -25,7 +41,7 @@ $(document).ready(function() {
   var abilitieStatus2 = '';
   $('#pokemons').on('click', '.pokemon', function(e) {
     e.preventDefault();
-
+    console.log('click');
     // Show Details
     var pokemonAPI = $(".pokemon__heading", this).attr('href');
     function displayPokemonDetail(data) {
@@ -99,21 +115,22 @@ $(document).ready(function() {
       // pokis += shapeName + '</a></p>';
 
       // Abilities
-      if(data.abilities[0].is_hidden === true){abilitieStatus1 = 'hidden';}
-      if(data.abilities[1].is_hidden === true){abilitieStatus2 = 'hidden';}
+      // if(data.abilities[0].is_hidden === true){abilitieStatus1 = 'hidden';}
+      // if(data.abilities[1].is_hidden === true){abilitieStatus2 = 'hidden';}
       pokis += '<p><strong>Abilities: </strong>';
-      pokis += '<a class="abilities ' + abilitieStatus1 + '" href="' + data.abilities[0].ability.url + '">' + data.abilities[0].ability.name + '</a>';
-      pokis += '<a class="abilities ' + abilitieStatus2 + '" href="' + data.abilities[1].ability.url + '">' + data.abilities[1].ability.name + '</a>';
+      pokis += '<a class="abilities ' +  + '" href="' + data.abilities[0].ability.url + '">' + data.abilities[0].ability.name + '</a>';
+      pokis += '<a class="abilities ' +  + '" href="' + data.abilities[1].ability.url + '">' + data.abilities[1].ability.name + '</a>';
       pokis += '</p>';
 
       // Stats
       pokis += '<p><h3>Stats: </h3>';
       for(var i = 0; i<data.stats.length; i++) {
         pokis += '<div class="stats__item">';
-        pokis += '<div class="stats__status" style="width:' + data.stats[i].base_stat + '%">';
         pokis += '<a href="' + data.stats[i].stat.url + '" class="">';
         pokis += data.stats[i].stat.name;
         pokis += '</a>';
+        pokis += '<span>' + data.stats[i].base_stat + '</span>'
+        pokis += '<div class="stats__status" style="width:' + (data.stats[i].base_stat / 1.8) + '%">';
         pokis += '</div>';
         pokis += '</div>';
       }
@@ -146,6 +163,7 @@ $(document).ready(function() {
 
   $('#modalClose, #modalBg').click(function() {
     $('#modal').hide();
+    $('#modalContent').html('<div class="loading" id="modalLoader"><span class="pokeposition"><i class="ball"></i></span><p>loading...</p></div>');
   });
 
 });
