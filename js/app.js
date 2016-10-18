@@ -110,7 +110,7 @@ $(document).ready(function() {
     pokis += '</p>';
 
     // Stats
-    pokis += '<p><h3>Stats: </h3>';
+    pokis += '<h3>Stats: </h3>';
     for(var j = 0; j<data.stats.length; j++) {
       pokis += '<div class="stats__item">';
       pokis += '<a href="' + data.stats[j].stat.url + '" class="">';
@@ -121,7 +121,7 @@ $(document).ready(function() {
       pokis += '</div>';
       pokis += '</div>';
     }
-    pokis += '</p>';
+    // pokis += '</p>';
 
     // navigation
     pokis += '<footer>';
@@ -136,8 +136,6 @@ $(document).ready(function() {
       pokis += '</button>';
     }
     pokis += '</footer>';
-
-  // get images from flickr
 
     $('#modalContent').html(pokis);
   }
